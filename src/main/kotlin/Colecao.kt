@@ -16,6 +16,8 @@ class Colecao {
         listaLivro.add(pacoteLivro)
     }
 
+    fun cadastrarColeção(vararg pacoteLivros: PacoteLivro) = pacoteLivros.forEach { cadastrarColecao(it) }
+
     fun consultar(codigo: Long){
         var i: Int = 0
         var tem: Boolean = false
@@ -48,22 +50,30 @@ class Colecao {
         var resposta: Livros? = null
         for (lista in listaLivro){
             tem = codigo.equals(listaLivro.get(i).codigo)
+            resposta = listaLivro.get(i)
 
-            if(tem == true) {
-                resposta = listaLivro.get(i)
-                listaLivro.remove(resposta)
-
+            if(tem == true && resposta.quantidade > 0) {
+                resposta.venda(1)
+                println(resposta.quantidade)
                 break
+            } else if(tem == true && resposta.quantidade == 0) {
+                println("Estoque esgotado")
+                break
+
             }
+
             i++
 
         }
 
         if(tem == false){
             println("Livro não encontrado!")
-        } else if (listaLivro.size == 0){
-            println("Estoque esgotado")
         }
+
+
+//        else if (listaLivro.size == 0){
+//            println("Estoque esgotado")
+//        }
     }
 
 
