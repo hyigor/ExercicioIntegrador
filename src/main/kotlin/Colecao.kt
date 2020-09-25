@@ -76,6 +76,16 @@ class Colecao {
 //        }
     }
 
+    fun mostrar(pacoteLivro: PacoteLivro){
+
+        var i = 0
+        for(lista in listaLivro){
+            println(listaLivro.get(i))
+            println(pacoteLivro.mostrar())
+            i++
+        }
+    }
+
 
 
 }
