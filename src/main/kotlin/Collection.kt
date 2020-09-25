@@ -1,11 +1,11 @@
-class PacoteLivro(override var codigo: Long, override var quantidade: Int) : Livros{
+class Collection(override var codigo: Long, override var quantidade: Int) : Livros{
     var pacote: MutableList<Livro> = mutableListOf()
 
     fun criarPacote(livro: Livro) {
         pacote.add(livro)
     }
 
-    override fun pica(): String{
+    override fun mostr(): String{
         return ""
     }
 
@@ -13,12 +13,12 @@ class PacoteLivro(override var codigo: Long, override var quantidade: Int) : Liv
 
 
     override fun toString(): String {
-        return "Codigo do Pacote: $codigo\nLivros:\n"
+        return "\nCodigo do Pacote: $codigo\nQuantidade: $quantidade\n\nLivros:\n"
     }
 
 
     fun mostrar(){
-        pacote.forEach {println("${it.pica()}")}
+        pacote.forEach { println("${it.mostr()}")}
     }
 
     override fun venda(num: Int) {

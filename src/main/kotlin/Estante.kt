@@ -1,4 +1,4 @@
-class Colecao {
+class Estante {
 
     var listaLivro = mutableListOf<Livros>()
 
@@ -12,13 +12,13 @@ class Colecao {
     fun cadastrarLivro(vararg livros: Livro) = livros.forEach { cadastrarLivro(it) }
 
 
-    fun cadastrarColecao(pacoteLivro: PacoteLivro){
-        listaLivro.add(pacoteLivro)
+    fun cadastrarColecao(collection: Collection){
+        listaLivro.add(collection)
     }
 
-    fun cadastrarColeção(vararg pacoteLivros: PacoteLivro) = pacoteLivros.forEach { cadastrarColecao(it) }
+    fun cadastrarColeção(vararg collections: Collection) = collections.forEach { cadastrarColecao(it) }
 
-    fun consultar(codigo: Long, pacoteLivro: PacoteLivro){
+    fun consultar(codigo: Long, collection: Collection){
         var i: Int = 0
         var tem: Boolean = false
         var resposta: Livros? = null
@@ -43,7 +43,7 @@ class Colecao {
 
     }
 
-    fun consultarColec(codigo: Long, pacoteLivro: PacoteLivro){
+    fun consultarColec(codigo: Long, collection: Collection){
         var i: Int = 0
         var tem: Boolean = false
         var resposta: Livros? = null
@@ -52,8 +52,8 @@ class Colecao {
 
             if(tem == true) {
 //                resposta = listaLivro.get(i)
-                println(listaLivro.get(i).pica())
-                println(pacoteLivro.mostrar())
+                println(listaLivro.get(i).toString())
+                println(collection.mostr())
                 break
             }
             i++
@@ -102,12 +102,12 @@ class Colecao {
 //        }
     }
 
-    fun mostrar(pacoteLivro: PacoteLivro){
+    fun mostrar(collection: Collection){
 
         var i = 0
         for(lista in listaLivro){
             println(listaLivro.get(i))
-            println(pacoteLivro.mostrar())
+            collection.mostr()
             i++
         }
     }

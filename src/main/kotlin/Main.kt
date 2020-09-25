@@ -6,10 +6,10 @@ fun main() {
     var livro3 = Livro(125,"fuga3 das galinhas", "Mamia", "2001",10,20.0)
     var livro4 = Livro(126,"fuga4 das galinhas", "Mamia", "2001",10,20.0)
 
-    var pacoteLivro = PacoteLivro(1234,10)
+    var pacoteLivro = Collection(1234,10)
     pacoteLivro.criarPacote(livro1,livro2,livro3,livro4)
 
-    var colecao = Colecao()
+    var colecao = Estante()
     colecao.cadastrarLivro(livro1, livro2, livro3, livro4)
     colecao.cadastrarColeção(pacoteLivro)
     println("Bem Vindo ao Sistema de Estoque!")
@@ -27,7 +27,7 @@ fun main() {
         if (resposta == 1) {
             println("Qual o codigo do livro e coleção:")
             val pesquisa = scan.nextLine().toLong()
-            if (pesquisa > 999) {
+            if (pesquisa < 999) {
                 colecao.consultar(pesquisa, pacoteLivro)
             } else {
                 colecao.consultarColec(pesquisa, pacoteLivro)
