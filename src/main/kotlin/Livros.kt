@@ -2,8 +2,10 @@ interface Livros {
     var codigo: Long
     var quantidade: Int
 
+    fun pica(): String
+
     fun venda(num: Int){
-        this.quantidade = quantidade - 1
+        this.quantidade = quantidade - num
     }
 
 

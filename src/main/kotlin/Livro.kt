@@ -5,6 +5,10 @@ class Livro(override var codigo: Long, val titulo: String, val autor: String,
         return "Codigo: $codigo\nTitulo: $titulo\nAutor: $autor\nAno de lançamento: $anoLançamento\nQuantidade: $quantidade\nPreço: $preco\n"
     }
 
+    override fun pica(): String {
+        return "Codigo: $codigo\nTitulo: $titulo\nAutor: $autor\nAno de lançamento: $anoLançamento\nPreço: $preco\n"
+    }
+
     override fun venda(num: Int) {
         super.venda(num)
     }

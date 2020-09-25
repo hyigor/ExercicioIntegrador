@@ -5,7 +5,9 @@ class PacoteLivro(override var codigo: Long, override var quantidade: Int) : Liv
         pacote.add(livro)
     }
 
-
+    override fun pica(): String{
+        return ""
+    }
 
     fun criarPacote(vararg livros: Livro) = livros.forEach { criarPacote(it) }
 
@@ -16,8 +18,9 @@ class PacoteLivro(override var codigo: Long, override var quantidade: Int) : Liv
 
 
     fun mostrar(){
-        pacote.forEach {println("${it.toString()}")}
+        pacote.forEach {println("${it.pica()}")}
     }
+
     override fun venda(num: Int) {
         super.venda(num)
     }
