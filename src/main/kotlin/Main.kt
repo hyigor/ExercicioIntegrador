@@ -14,7 +14,7 @@ fun main() {
     colecao.cadastrarColeção(pacoteLivro)
     println("Bem Vindo ao Sistema de Estoque!")
     println("Feito por:")
-    println("Gustavo Boeton")
+    println("Gustavo Boteon")
     println("Igor Chagas\n")
 
     while (true) {

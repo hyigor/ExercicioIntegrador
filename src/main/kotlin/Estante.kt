@@ -53,7 +53,7 @@ class Estante {
             if(tem == true) {
 //                resposta = listaLivro.get(i)
                 println(listaLivro.get(i).toString())
-                println(collection.mostr())
+                println(collection.mostrar())
                 break
             }
             i++
